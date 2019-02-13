@@ -1,0 +1,19 @@
+
+.opacity(@opacity) when (isnumber(@opacity)){
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
+// 使用方式
+// div {
+// 	.opacity(0.2);
+// }
+
+
+// 结果
+// div {
+//   opacity: 0.2;
+//   filter: alpha(opacity=20);
+// }

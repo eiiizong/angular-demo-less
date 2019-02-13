@@ -1,0 +1,27 @@
+// 背景图
+
+@img-base-url: '../img/icon/';
+@img-svg-base-url: '../img/svg/';
+.image(@name) when (isstring(@name)) {
+	background-image: url('@{img-base-url}@{name}.png');
+	@media (-webkit-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+		background-image: url('@{img-base-url}@{name}@2x.png');
+	}
+}
+.image-svg (@name)when (isstring(@name)) {
+	background-image: url('@{img-svg-base-url}@{name}.svg');
+}
+// 使用方式
+// div {
+// 	.image(test);
+// }
+
+// 结果
+// div {
+//   background-image: url('../img/test.png');
+// }
+// @media (-webkit-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+//   div {
+//     background-image: url('../img/test.@2xpng');
+//   }
+// }

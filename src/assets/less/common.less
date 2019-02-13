@@ -1,0 +1,99 @@
+/*! component/common.less  */
+@a-color: #35ef66;
+@body-bgc: #fff;
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 100%; /*浏览器默认字体大小*/
+  font-family: "PingFang SC", "Helvetica Neue", Helvetica, "Nimbus Sans L",
+    Arial, "Liberation Sans", "Hiragino Sans GB", "Source Han Sans CN Normal",
+    "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti",
+    SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+  overflow: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: @body-bgc;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-overflow-scrolling: touch;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+// 针对 vue 数据闪烁
+[v-cloak] {
+  display: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: @a-color;
+  outline: 0;
+}
+
+/* 去除 ios 点击之后的背景 */
+a,
+input,
+label {
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+// icon
+i.icon {
+  display: inline-block;
+  font-style: normal;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  vertical-align: top;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+body > div,
+#app > div {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  font-weight: 500;
+}
+
+/********************************************************/
+img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+// 空 img 边框问题
+img[src=""],
+img:not([src]) {
+  opacity: 0;
+}

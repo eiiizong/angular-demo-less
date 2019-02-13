@@ -1,0 +1,27 @@
+/*!   select.less  */
+
+select,
+.select {
+	display: block;
+	width: 100%;
+	text-align: right;
+	border: 0;
+	outline: 0;
+	margin: 0;
+	padding: 0;
+	color: #efbb00;
+	line-height: @88px;
+	background-color: transparent;
+	padding-left: @200px;
+	direction: rtl;
+	/*很关键：将默认的select选择框样式清除*/
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	&::-ms-expand {
+		display: none;
+	}
+	option {
+		direction: rtl;
+	}
+}

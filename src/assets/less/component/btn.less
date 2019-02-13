@@ -1,0 +1,50 @@
+/*! btn.less 按钮样式*/
+
+button,
+.btn {
+	display: block;
+	width: 100%;
+	border: 0;
+	outline: 0;
+	margin: 0;
+	padding: 0;
+	height: @btn-height;
+	line-height:@btn-height;
+	color: @btn-color;
+	font-size: @30px;
+	font-weight: 500;
+	vertical-align: top;
+	text-align: center;
+	background-color: @btn-bgc;
+	border-radius: @btn-border-raduis;
+	&:active {
+		background-color: lighten(@btn-bgc, 10%);
+	}
+	&.no {
+		background-color: transparent;
+		color: #000;
+		border-radius: 0;
+		height: 14px;
+		line-height: 14px;
+	}
+}
+
+.btn-box {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: @btn-box-padding-TB @btn-box-padding-LR;
+}
+.btn-box-w100 {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	.btn {
+		height: @btn-w100-height;
+		font-size: @34px;
+		line-height: @btn-w100-height;
+		border-radius: 0;
+	}
+}

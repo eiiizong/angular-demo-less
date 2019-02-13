@@ -1,0 +1,22 @@
+// 清除浮动
+.clearfix() {
+	&::before,
+	&::after {
+		display: table;
+		content: "";
+	}
+	&:after {
+		clear: both;
+	}
+	> .left {
+		float: left;
+	}
+	> .right {
+		float: right;
+	}
+	> div {
+		float: left;
+	}
+	// 兼容IE6/7
+	*zoom: 1;
+}
