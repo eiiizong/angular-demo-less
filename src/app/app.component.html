@@ -1,7 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="app">
-  app
-  <app-hello-world></app-hello-world>
-  <app-user-list></app-user-list>
+  <form action="">
+    <h3>Add a Link</h3>
+    <div>
+      <label for="title">标题：</label>
+      <input type="text" name="title" id="title" #newtitle />
+    </div>
+    <div>
+      <label for="link">链接：</label>
+      <input type="text" name="link" id="link" #newlink />
+    </div>
+  </form>
+  <button type="button" (click)="addArticle(newtitle, newlink)">提交</button>
 </div>
 
+<app-article
+  *ngFor="let item of sortedArticles()"
+  [article]="item"
+></app-article>
