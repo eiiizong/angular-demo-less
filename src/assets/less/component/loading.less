@@ -1,0 +1,441 @@
+// loading
+/*
+
+<div class="loading type02">
+    <span></span>
+</div>
+
+<div class="loading type01|type03|type04|type05|type06|type07|type08">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="loading type09|type10">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+*/
+.loading {
+  display: block;
+  margin-top: -100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  &.type01 {
+    width: 80px;
+    height: 40px;
+    span {
+      display: inline-block;
+      width: 8px;
+      height: 100%;
+      border-radius: 4px;
+      background: lightgreen;
+      -webkit-animation: type01 1s ease infinite;
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+        -webkit-animation-delay: 0.2s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.4s;
+        -webkit-animation-delay: 0.4s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.6s;
+        -webkit-animation-delay: 0.6s;
+      }
+      &:nth-child(5) {
+        animation-delay: 0.8s;
+        -webkit-animation-delay: 0.8s;
+      }
+    }
+  }
+  &.type02 {
+    width: 150px;
+    height: 4px;
+    border-radius: 2px;
+    position: relative;
+    background: lightgreen;
+    animation: changeBgColor 1.04s ease-in infinite alternate;
+    -webkit-animation: changeBgColor 1.04s ease-in infinite alternate;
+    span {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: lightgreen;
+      position: absolute;
+      margin-top: -7px;
+      margin-left: -8px;
+      animation: changePosition 1.04s ease-in infinite alternate;
+      -webkit-animation: changePosition 1.04s ease-in infinite alternate;
+    }
+  }
+  &.type03,
+  &.type04,
+  &.type05,
+  &.type06,
+  &.type07,
+  &.type08 {
+    width: 150px;
+    height: 15px;
+    span {
+      display: inline-block;
+      width: 15px;
+      height: 100%;
+      margin-right: 5px;
+      border-radius: 50%;
+      background: lightgreen;
+      animation: load 1.04s ease infinite;
+      -webkit-animation: type03 1.04s ease infinite;
+      &:nth-child(1) {
+        animation-delay: 0.13s;
+        -webkit-animation-delay: 0.13s;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.26s;
+        -webkit-animation-delay: 0.26s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.39s;
+        -webkit-animation-delay: 0.39s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.52s;
+        -webkit-animation-delay: 0.52s;
+      }
+      &:nth-child(5) {
+        animation-delay: 0.65s;
+        -webkit-animation-delay: 0.65s;
+      }
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+  &.type04 {
+    span {
+      animation: type04 1.04s ease infinite;
+      -webkit-animation: type04 1.04s ease infinite;
+    }
+  }
+  &.type05 {
+    span {
+      animation: type05 1.04s ease infinite;
+      -webkit-animation: type05 1.04s ease infinite;
+    }
+  }
+  &.type06 {
+    span {
+      border-radius: 0;
+      animation: type06 1.04s ease infinite;
+      -webkit-animation: type06 1.04s ease infinite;
+    }
+  }
+  &.type07 {
+    span {
+      border-radius: 0;
+      transform-origin: right bottom;
+      -webkit-transform-origin: right bottom;
+      animation: type07 1.04s ease infinite;
+      -webkit-animation: type07 1.04s ease infinite;
+    }
+  }
+  &.type08 {
+    span {
+      border-radius: 0;
+      transform-origin: right bottom;
+      -webkit-transform-origin: right bottom;
+      animation: type08 1.04s ease infinite;
+      -webkit-animation: type08 1.04s ease infinite;
+    }
+  }
+  &.type09,
+  &.type10 {
+    width: 100px;
+    height: 100px;
+    span {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: lightgreen;
+      position: absolute;
+      animation: type09 1.04s ease infinite;
+      -webkit-animation: type09 1.04s ease infinite;
+      &:nth-child(1) {
+        left: 0;
+        top: 50%;
+        margin-top: -8px;
+        animation-delay: 0.13s;
+        -webkit-animation-delay: 0.13s;
+      }
+      &:nth-child(2) {
+        left: 14px;
+        top: 14px;
+        animation-delay: 0.26s;
+        -webkit-animation-delay: 0.26s;
+      }
+      &:nth-child(3) {
+        left: 50%;
+        top: 0;
+        margin-left: -8px;
+        animation-delay: 0.39s;
+        -webkit-animation-delay: 0.39s;
+      }
+      &:nth-child(4) {
+        top: 14px;
+        right: 14px;
+        animation-delay: 0.52s;
+        -webkit-animation-delay: 0.52s;
+      }
+      &:nth-child(5) {
+        right: 0;
+        top: 50%;
+        margin-top: -8px;
+        animation-delay: 0.65s;
+        -webkit-animation-delay: 0.65s;
+      }
+      &:nth-child(6) {
+        right: 14px;
+        bottom: 14px;
+        animation-delay: 0.78s;
+        -webkit-animation-delay: 0.78s;
+      }
+      &:nth-child(7) {
+        bottom: 0;
+        left: 50%;
+        margin-left: -8px;
+        animation-delay: 0.91s;
+        -webkit-animation-delay: 0.91s;
+      }
+      &:nth-child(8) {
+        bottom: 14px;
+        left: 14px;
+        animation-delay: 1.04s;
+        -webkit-animation-delay: 1.04s;
+      }
+    }
+  }
+  &.type10 {
+    span {
+      animation: type10 1.04s ease infinite;
+      -webkit-animation: type10 1.04s ease infinite;
+    }
+  }
+}
+@keyframes type10 {
+  0% {
+    -webkit-transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0.3);
+    opacity: 0.5;
+  }
+}
+@-webkit-keyframes type10 {
+  0% {
+    -webkit-transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0.3);
+    opacity: 0.5;
+  }
+}
+@keyframes type09 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+@-webkit-keyframes type09 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+@keyframes type08 {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(90deg) scale(0.3);
+  }
+}
+@-webkit-keyframes type08 {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(90deg) scale(0.3);
+  }
+}
+@keyframes type07 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(90deg);
+  }
+}
+@-webkit-keyframes type07 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(90deg);
+  }
+}
+@keyframes type06 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes type06 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes type05 {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0px);
+  }
+  100% {
+    opacity: 0.2;
+    -webkit-transform: translate(150px);
+  }
+}
+@-webkit-keyframes type05 {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0px);
+  }
+  100% {
+    opacity: 0.2;
+    -webkit-transform: translate(150px);
+  }
+}
+@keyframes type04 {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1.3);
+  }
+  100% {
+    opacity: 0.2;
+    -webkit-transform: scale(0.3);
+  }
+}
+@-webkit-keyframes type04 {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1.3);
+  }
+  100% {
+    opacity: 0.2;
+    -webkit-transform: scale(0.3);
+  }
+}
+@keyframes type03 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes type03 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes type01 {
+  0%,
+  100% {
+    height: 40px;
+    background: lightgreen;
+  }
+  50% {
+    height: 70px;
+    margin: -15px 0;
+    background: lightblue;
+  }
+}
+@-webkit-keyframes type01 {
+  0%,
+  100% {
+    height: 40px;
+    background: lightgreen;
+  }
+  50% {
+    height: 70px;
+    margin: -15px 0;
+    background: lightblue;
+  }
+}
+@-webkit-keyframes changeBgColor {
+  0% {
+    background: lightgreen;
+  }
+  100% {
+    background: lightblue;
+  }
+}
+@keyframes changeBgColor {
+  0% {
+    background: lightgreen;
+  }
+  100% {
+    background: lightblue;
+  }
+}
+@-webkit-keyframes changePosition {
+  0% {
+    background: lightgreen;
+  }
+  100% {
+    margin-left: 142px;
+    background: lightblue;
+  }
+}
+@keyframes changePosition {
+  0% {
+    background: lightgreen;
+  }
+  100% {
+    margin-left: 142px;
+    background: lightblue;
+  }
+}
